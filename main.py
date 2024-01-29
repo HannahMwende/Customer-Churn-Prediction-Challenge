@@ -36,5 +36,5 @@ async def predict_sepsis(item: features):
 
         return {"prediction": f'Patient is {decoded_predictions[0]}'}
 
-    except Exception:
-        raise HTTPException(status_code=500, detail=str(Exception))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
